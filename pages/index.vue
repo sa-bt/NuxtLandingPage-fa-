@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+<h1>salam donya</h1>
 </template>
 
 <script>
