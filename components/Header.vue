@@ -20,7 +20,8 @@
                   class="nav-item "
                   :class="{'nav-item-active' : showProductsMenu}"
                   @click="showProductsMenu = !showProductsMenu"
-                ><a> محصولات </a></li>
+                ><a> محصولات
+                  <i class="fas fa-chevron-down text-xs"></i></a></li>
                 <div
                   v-show="showProductsMenu"
                   class="absolute top-11 bg-white border rounded-lg px-6 py-4"
@@ -41,40 +42,43 @@
 
 
         <div class="md:hidden">
-          <span @click="showMenu = !showMenu">menu</span>
-          <div v-show="showMenu" class="absolute top-11 bg-white border rounded-lg px-6 py-4 w-full transition duration-2500 ease-in-out transform">
+          <div @click="showMenu = !showMenu"><i class="fas fa-bars text-xl"></i></div>
+          <transition name="fade">
+            <div v-show="showMenu"
+                 class="absolute top-8 bg-white border rounded-lg px-6 py-4 w-full transition duration-2500 ease-in-out transform">
 
-            <div class="">
-              <ul class="flex flex-col gap-5 text-center">
-                <li class="nav-item-active"><a>صفحه اصلی </a></li>
-                <div>
-                  <li
-                    class=" "
-                    :class="{'nav-item-active' : showProductsMenu}"
-                    @click="showProductsMenu = !showProductsMenu"
-                  ><a> محصولات </a></li>
-                  <div
-                    v-show="showProductsMenu"
-                    class="mx-auto max-w-max bg-white border rounded-lg px-6 py-4"
+              <div class="">
+                <ul class="flex flex-col gap-5 text-center">
+                  <li><a>صفحه اصلی </a></li>
+                  <div>
+                    <li
+                      class=" "
+                      @click="showProductsMenu = !showProductsMenu"
+                    ><a> محصولات
+                      <i class="fas fa-chevron-down text-xs"></i></a></li>
+                    <div
+                      v-show="showProductsMenu"
+                      class="mx-auto max-w-max bg-white border rounded-lg px-6 py-4"
 
-                  >
-                    <ul class="space-y-3">
-                      <li class="hover:text-indigo-600">لورم تست</li>
-                      <li class="hover:text-indigo-600">لورم تست</li>
-                      <li class="hover:text-indigo-600">لورم لورم تست</li>
-                    </ul>
+                    >
+                      <ul class="space-y-3">
+                        <li class="hover:text-indigo-600">لورم تست</li>
+                        <li class="hover:text-indigo-600">لورم تست</li>
+                        <li class="hover:text-indigo-600">لورم لورم تست</li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                <li class=""><a>درباره ما </a></li>
-                <li class=""><a>تماس با ما </a></li>
-              </ul>
-            </div>
+                  <li class=""><a>درباره ما </a></li>
+                  <li class=""><a>تماس با ما </a></li>
+                </ul>
+              </div>
 
-            <div class="flex flex-col gap-3 mt-5">
-              <button class="btn btn-primary ">عضویت</button>
-              <button class="btn btn-secondary ">ورود</button>
+              <div class="flex flex-col gap-3 mt-5">
+                <button class="btn btn-primary ">عضویت</button>
+                <button class="btn btn-secondary ">ورود</button>
+              </div>
             </div>
-          </div>
+          </transition>
         </div>
         <!--Part2-->
         <div>
@@ -100,5 +104,10 @@
 </script>
 
 <style scoped>
-
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 </style>
