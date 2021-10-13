@@ -80,10 +80,13 @@
             </div>
           </transition>
         </div>
-        <!--Part2-->
-        <div>
-          <h2>SABT</h2>
 
+        <!--Logo-->
+        <div class="flex">
+          <div class="ml-4">
+            <ColorModePicker/>
+          </div>
+          <h2 class="text-2xl font-bold">SABT</h2>
         </div>
       </nav>
 
@@ -92,14 +95,22 @@
 </template>
 
 <script>
+    import ColorModePicker from "./ColorModePicker";
     export default {
         name: "Header",
+        components: {ColorModePicker},
         data() {
             return {
                 showProductsMenu: false,
                 showMenu: false
             }
         },
+        methods: {
+            changeMode() {
+                this.$colorMode.preference =
+                    this.$colorMode.preference === 'light' ? 'dark' : 'light'
+            }
+        }
     }
 </script>
 
@@ -107,7 +118,9 @@
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  {
     opacity: 0;
   }
 </style>

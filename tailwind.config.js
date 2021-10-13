@@ -1,8 +1,18 @@
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      lineHeight:{
+        '0':'0'
+      },
+      colors: {
+        green: '#59981A',
+        'green-yellow': '#ECF87F',
+        'green-lime': '#81B622',
+        'green-olive': '#3D550C',
+      },
+    },
     fontFamily:{
       irs:['irs']
     }
@@ -11,6 +21,7 @@ module.exports = {
     extend: {
       borderStyle: ['responsive', 'hover'],
       borderWidth: ['responsive', 'hover'],
+
     },
   },
   plugins: [],

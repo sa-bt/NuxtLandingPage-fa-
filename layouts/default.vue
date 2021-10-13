@@ -1,5 +1,5 @@
 <template>
-<div dir="rtl" class="font-irs">
+<div dir="rtl" class="font-irs dark:bg-gray-800">
   <Header/>
   <Nuxt/>
 </div>
@@ -13,6 +13,12 @@
     }
 </script>
 
-<style scoped>
+<style >
+  /*.dark-mode {*/
+  /*  @apply text-white bg-gray-800;*/
+  /*}*/
 
+  /*.light-mode {*/
+  /*  @apply text-black bg-green-yellow;*/
+  /*}*/
 </style>
