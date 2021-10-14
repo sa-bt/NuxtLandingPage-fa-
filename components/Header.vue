@@ -83,9 +83,7 @@
 
         <!--Logo-->
         <div class="flex">
-          <div class="ml-4">
             <ColorModePicker/>
-          </div>
           <h2 class="text-2xl font-bold">SABT</h2>
         </div>
       </nav>
