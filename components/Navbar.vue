@@ -95,7 +95,7 @@
 <script>
     import ColorModePicker from "./ColorModePicker";
     export default {
-        name: "Header",
+        name: "Navbar",
         components: {ColorModePicker},
         data() {
             return {

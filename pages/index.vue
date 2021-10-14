@@ -1,7 +1,11 @@
 <template>
-<h1>salam donya</h1>
+  <Home/>
 </template>
 
 <script>
-export default {}
+    import Home from "../components/Home";
+
+    export default {
+        components: {Home}
+    }
 </script>

@@ -51,8 +51,8 @@
             },
             toSystemMode() {
                 console.log(window.matchMedia('(prefers-color-scheme:dark)').matches)
-                window.matchMedia('(prefers-color-scheme:dark)').matches ? this.$colorMode.preference = 'dark'
-                    : this.$colorMode.preference = 'light';
+                this.$colorMode.preference = window.matchMedia('(prefers-color-scheme:dark)').matches ?  'dark'
+                    : 'light';
 
                 this.nextMode = 'sepia'
             },
@@ -70,7 +70,7 @@
   /*  background-color: #fff;*/
   /*  color: rgba(0,0,0,0.8);*/
   /*}*/
-  /*.dark-mode body {*/
+  /*.dark-mode body  p {*/
   /*  background-color: #091a28;*/
   /*  color: #ebf4f1;*/
   /*}*/

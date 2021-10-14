@@ -7,15 +7,14 @@ module.exports = {
         '0':'0'
       },
       colors: {
-        green: '#59981A',
-        'green-yellow': '#ECF87F',
-        'green-lime': '#81B622',
-        'green-olive': '#3D550C',
+        'color-primary': '#52f8cb',
+        'color-secondary': '#f83a45',
       },
     },
     fontFamily:{
       irs:['irs']
-    }
+    },
+
   },
   variants: {
     extend: {
@@ -26,3 +25,4 @@ module.exports = {
   },
   plugins: [],
 }
+
