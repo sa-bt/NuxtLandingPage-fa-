@@ -22,6 +22,11 @@ module.exports = {
       borderWidth: ['responsive', 'hover'],
 
     },
+    backgroundColor: ['responsive', 'hover', 'focus', 'dark'],
+    borderColor: ['responsive', 'hover', 'focus', 'dark'],
+    boxShadow: ['responsive', 'hover', 'focus', 'dark'],
+    textColor: ['responsive', 'hover', 'focus', 'dark'],
+    textDecoration: ['responsive', 'hover', 'focus', 'dark'],
   },
   plugins: [],
 }

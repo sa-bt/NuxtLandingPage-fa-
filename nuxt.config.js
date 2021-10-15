@@ -30,6 +30,12 @@ export default {
     '@nuxtjs/color-mode'
 
   ],
+  colorMode: {
+    preference: 'system', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+    classPrefix: '',
+    classSuffix: '',
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
