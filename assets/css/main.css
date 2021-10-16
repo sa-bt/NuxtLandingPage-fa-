@@ -4,8 +4,9 @@
   --color-secondary: #0e2233;
   --bg: #f3f5f4;
   --bg-secondary: #fff;
-  --border-color: #7ddd6d;
+  --border-color: #c9bedd;
   --icon-color: #26dd56;
+  --btn-primary: #ff3440
 }
 
 .dark {
@@ -16,6 +17,7 @@
   --bg-secondary: #071521;
   --border-color: #0d2538;
   --boriconlor: #0d2538;
+  --btn-primary: #10ff2b
 }
 .sepia {
   --color: #433422;
@@ -25,6 +27,7 @@
   --bg-secondary: #eae0c9;
   --border-color: #ded0bf;
   --boriconlor: #ded0bf;
+  --btn-primary: #2536ff
 }
 
 body {
@@ -45,4 +48,7 @@ p{
 }
 i{
   color: var(--icon-color);
+}
+.btn-primary{
+  background: var(--btn-primary);
 }
