@@ -4,6 +4,7 @@
     <AboutUs/>
     <Package/>
     <Gallery/>
+    <Contact/>
     <br>
     <br>
     <br>
@@ -22,8 +23,9 @@
     import AboutUs from "../components/AboutUs";
     import Package from "../components/Package";
     import Gallery from "../components/Gallery";
+    import Contact from "../components/Contact";
 
     export default {
-        components: {Gallery, Package, AboutUs, Home}
+        components: {Contact, Gallery, Package, AboutUs, Home}
     }
 </script>
