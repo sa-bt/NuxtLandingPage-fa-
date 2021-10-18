@@ -5,15 +5,7 @@
     <Package/>
     <Gallery/>
     <Contact/>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <Footer/>
   </div>
 
 </template>
@@ -24,8 +16,9 @@
     import Package from "../components/Package";
     import Gallery from "../components/Gallery";
     import Contact from "../components/Contact";
+    import Footer from "../components/Footer";
 
     export default {
-        components: {Contact, Gallery, Package, AboutUs, Home}
+        components: {Footer, Contact, Gallery, Package, AboutUs, Home}
     }
 </script>
