@@ -10,17 +10,17 @@
       <div>
         <ul class="flex justify-center">
           <li
+            @click="tabActive = 'all'"
+            class="px-4 py-2 cursor-pointer "
+            :class="tabActive=='all' &&'border-b-4'" >همه
+          </li>
+          <li
             v-for="(tab, index) in tabs"
             :key="index"
             @click="tabActive = tab.category"
             class="px-4 py-2 cursor-pointer "
             :class="tabActive==tab.category &&'border-b-4'"
           >{{tab.display_category}}
-          </li>
-          <li
-            @click="tabActive = 'all'"
-            class="px-4 py-2 cursor-pointer "
-            :class="tabActive=='all' &&'border-b-4'" >همه
           </li>
         </ul>
         <div v-for="(tab, index) in tabs"
