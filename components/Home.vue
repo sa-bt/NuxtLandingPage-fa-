@@ -7,8 +7,8 @@
           <p class=" text-justify leading-8 mb-6 "  >لورم ایسوم متن ساختگیلورم ایسوم متن ساختگیلورم ایسوم متن ساختگیلورم ایسوم متن ساختگی لورم ایسوم متن ساختگی
             لورم
             ایسوم متن ساختگی لورم ایسوم متن ساختگی لورم ایسوم متن ساختگی لورم ایسوم متن ساختگی است</p>
-          <button class="btn btn-primary">ورود</button>
-          <button class="btn btn-secondary">عضویت</button>
+          <NuxtLink :to="{name:'auth-login'}" class="btn btn-primary">ورود</NuxtLink>
+          <NuxtLink :to="{name:'auth-register'}" class="btn btn-secondary">عضویت</NuxtLink>
         </div>
         <img class="md:w-1/4" data-aos="flip-up" data-aos-duration="1000" src="icon.png" alt="">
       </div>

@@ -8,13 +8,16 @@
         <div class="hidden md:flex items-center">
 
           <div>
-            <button class="btn btn-primary ">عضویت</button>
-            <button class="btn btn-secondary mr-2 ">ورود</button>
+            <NuxtLink :to="{name:'auth-login'}" class="btn btn-primary">ورود</NuxtLink>
+            <NuxtLink :to="{name:'auth-register'}" class="btn btn-secondary">عضویت</NuxtLink>
           </div>
 
           <div class="mr-7">
             <ul class="flex gap-7">
-              <li class="nav-item-active"><a>صفحه اصلی </a></li>
+              <li>
+                <NuxtLink :to="{name:'index'}" class="nav-item-active">صفحه اصلی</NuxtLink>
+              </li>
+
               <div>
                 <li
                   class="nav-item "
@@ -49,7 +52,9 @@
 
               <div class="">
                 <ul class="flex flex-col gap-5 text-center">
-                  <li><a>صفحه اصلی </a></li>
+                  <li>
+                    <NuxtLink :to="{name:'index'}">صفحه اصلی</NuxtLink>
+                  </li>
                   <div>
                     <li
                       class=" "
@@ -74,8 +79,8 @@
               </div>
 
               <div class="flex flex-col gap-3 mt-5">
-                <button class="btn btn-primary ">عضویت</button>
-                <button class="btn btn-secondary ">ورود</button>
+                <NuxtLink :to="{name:'auth-login'}" class="btn btn-primary">ورود</NuxtLink>
+                <NuxtLink :to="{name:'auth-register'}" class="btn btn-secondary">عضویت</NuxtLink>
               </div>
             </div>
           </transition>
@@ -83,7 +88,7 @@
 
         <!--Logo-->
         <div class="flex">
-            <ColorModePicker/>
+          <ColorModePicker/>
           <h2 class="text-2xl font-bold">SABT</h2>
         </div>
       </nav>
@@ -94,6 +99,7 @@
 
 <script>
     import ColorModePicker from "./ColorModePicker";
+
     export default {
         name: "Navbar",
         components: {ColorModePicker},

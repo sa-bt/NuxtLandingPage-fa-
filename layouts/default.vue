@@ -1,5 +1,5 @@
 <template>
-<div dir="rtl" class="font-irs dark:bg-gray-800">
+<div dir="rtl" class="font-irs">
   <Navbar/>
   <Nuxt/>
 </div>
