@@ -23,8 +23,8 @@
                   class="nav-item "
                   :class="{'nav-item-active' : showProductsMenu}"
                   @click="showProductsMenu = !showProductsMenu"
-                ><a> محصولات
-                  <i class="fas fa-chevron-down text-xs"></i></a></li>
+                ><NuxtLink :to="{name:'products'}"> محصولات
+                  <i class="fas fa-chevron-down text-xs"></i></NuxtLink></li>
                 <div
                   v-show="showProductsMenu"
                   class="absolute top-11 bg-white border rounded-lg px-6 py-4"
