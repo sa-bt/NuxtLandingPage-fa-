@@ -29,10 +29,20 @@
         computed: {
             ...mapGetters({products: 'products/allProducts'})
         },
+        mounted() {
+            this.setInitialCart();
+        },
         methods: {
             ...mapActions({add: 'carts/addToCart'}),
+            ...mapActions({setCart: 'carts/setCart'}),
             addToCart(product) {
                 this.add(product)
+            },
+            setInitialCart(){
+                let cart = localStorage.getItem('cart')
+                if (cart){
+                    this.setCart(cart);
+                }
             }
         }
     }
