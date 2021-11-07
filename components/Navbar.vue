@@ -7,9 +7,14 @@
         <!--Part1-->
         <div class="hidden md:flex items-center">
 
-          <div>
+          <div class="flex">
             <NuxtLink :to="{name:'auth-login'}" class="btn btn-primary">ورود</NuxtLink>
             <NuxtLink :to="{name:'auth-register'}" class="btn btn-secondary">عضویت</NuxtLink>
+            <div class="relative">
+              <span class="rounded-full bg-red-200 font-xs bg-red-600 leading-0 absolute top-1 right-1  px-1 py-2">{{count}}</span>
+              <NuxtLink :to="{name:'cart'}" class=""><i class="fa fa-shopping-cart text-black text-2xl p-2"></i></NuxtLink>
+            </div>
+
           </div>
 
           <div class="mr-7">
@@ -99,6 +104,7 @@
 
 <script>
     import ColorModePicker from "./ColorModePicker";
+    import {mapGetters,mapActions} from 'vuex'
 
     export default {
         name: "Navbar",
@@ -106,13 +112,27 @@
         data() {
             return {
                 showProductsMenu: false,
-                showMenu: false
+                showMenu: false,
             }
         },
+        computed: {
+            ...mapGetters({count: 'cart/count'})
+        },
+        mounted(){
+            this.setInitialCart();
+            console.log(this.count)
+        },
         methods: {
+            ...mapActions({setCart: 'cart/setCart'}),
             changeMode() {
                 this.$colorMode.preference =
                     this.$colorMode.preference === 'light' ? 'dark' : 'light'
+            },
+            setInitialCart(){
+                let cart = localStorage.getItem('cart')
+                if (cart){
+                    this.setCart(cart);
+                }
             }
         }
     }

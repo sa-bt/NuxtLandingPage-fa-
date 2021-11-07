@@ -10,6 +10,10 @@ export default {
   getters: {
     allProducts(state) {
       return state.cart;
+    },
+    count(state) {
+      console.log(33)
+      return state.cart.length;
     }
   },
   mutations: {
