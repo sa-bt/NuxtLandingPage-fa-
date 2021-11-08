@@ -120,7 +120,6 @@
         },
         mounted(){
             this.setInitialCart();
-            console.log(this.count)
         },
         methods: {
             ...mapActions({setCart: 'cart/setCart'}),

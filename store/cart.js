@@ -11,6 +11,12 @@ export default {
     allProducts(state) {
       return state.cart;
     },
+    totalAmount(state){
+      return state.cart.reduce((total,p)=>{
+        return total + (p.price * p.quantity)
+      },0)
+    },
+
     count(state) {
       console.log(33)
       return state.cart.length;
@@ -29,10 +35,28 @@ export default {
       }
       updateLocalStorage(state.cart)
     },
+
     SET_CART(state, cart) {
       state.cart=JSON.parse(cart);
+    },
+
+    INCREMENT(state,id){
+      const item = state.cart.find(p => p.id == id);
+      if (item) {
+        item.quantity++
+      }
+      updateLocalStorage(state.cart)
+    },
+
+    DECREMENT(state,id){
+      const item = state.cart.find(p => p.id == id);
+      if (item) {
+        item.quantity--
+      }
+      updateLocalStorage(state.cart)
     }
   },
+
   actions: {
     addToCart({commit}, product) {
       commit('ADD', product)
@@ -42,6 +66,13 @@ export default {
       commit('SET_CART', cart)
     },
 
+    increment({commit}, productId) {
+      commit('INCREMENT', productId)
+    },
+
+    decrement({commit}, productId) {
+      commit('DECREMENT', productId)
+    },
 
   }
 }
