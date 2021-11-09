@@ -1,6 +1,10 @@
 <template>
   <div class="container p-8 mx-auto mt-12">
-    <div class="w-full overflow-x-auto">
+    <div v-if="items.length == 0" class="text-center mt-20">
+      <i class="fa fa-shopping-basket text-9xl"></i>
+      <h3 class="text-bold text-2xl mt-4"> سبد خرید شما خالی است</h3>
+    </div>
+    <div v-else class="w-full overflow-x-auto">
       <div class="my-2">
         <h3 class="text-xl font-bold tracking-wider">سبد خرید</h3>
       </div>
@@ -16,11 +20,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(product,index) in products" :key="index">
+        <tr v-for="(item,index) in items" :key="index">
           <td>
             <div class="flex justify-center">
               <img
-                :src="product.image"
+                :src="item.image"
                 class="object-cover h-28 w-28 rounded-2xl"
                 alt="image"
               />
@@ -28,12 +32,12 @@
           </td>
           <td class="p-4 px-6 text-center whitespace-nowrap">
             <div class="flex flex-col items-center justify-center">
-              <h3>{{product.name}}</h3>
+              <h3>{{item.name}}</h3>
             </div>
           </td>
           <td class="p-4 px-6 text-center whitespace-nowrap">
             <div>
-              <button @click="decrement(product.id)">
+              <button @click="decrement(item.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="inline-flex w-6 h-6 text-red-600"
@@ -52,10 +56,10 @@
               <input
                 type="text"
                 name="qty"
-                :value="product.quantity"
+                :value="item.quantity"
                 class="w-12 text-center bg-gray-100 outline-none"
               />
-              <button @click="increment(product.id)">
+              <button @click="increment(item.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="inline-flex w-6 h-6 text-green-600"
@@ -73,10 +77,10 @@
               </button>
             </div>
           </td>
-          <td class="p-4 px-6 text-center whitespace-nowrap">{{product.price}}</td>
-          <td class="p-4 px-6 text-center whitespace-nowrap">{{product.price * product.quantity}}</td>
+          <td class="p-4 px-6 text-center whitespace-nowrap">{{item.price}}</td>
+          <td class="p-4 px-6 text-center whitespace-nowrap">{{item.price * item.quantity}}</td>
           <td class="p-4 px-6 text-center whitespace-nowrap">
-            <button>
+            <button @click="removeFromCart(item.id)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="w-6 h-6 text-red-400"
@@ -190,7 +194,7 @@
     export default {
         name: "cart",
         computed: {
-            ...mapGetters({products: 'cart/allProducts'}),
+            ...mapGetters({items: 'cart/allProducts'}),
             ...mapGetters({cartTotalAmount: 'cart/totalAmount'}),
         },
         methods: {
@@ -198,13 +202,16 @@
                 {
                     incrementItem: 'cart/increment',
                     decrementItem: 'cart/decrement',
+                    deleteItem: 'cart/delete',
                 }),
             increment(id) {
                 this.incrementItem(id)
             },
             decrement(id) {
                 this.decrementItem(id)
-
+            },
+            removeFromCart(id){
+                this.deleteItem(id)
             }
         }
     }

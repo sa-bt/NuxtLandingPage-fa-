@@ -1,20 +1,21 @@
 function updateLocalStorage(cart) {
   window.localStorage.setItem('cart', JSON.stringify(cart))
 }
+
 export default {
   state() {
     return {
-      cart:  []
+      cart: []
     }
   },
   getters: {
     allProducts(state) {
       return state.cart;
     },
-    totalAmount(state){
-      return state.cart.reduce((total,p)=>{
+    totalAmount(state) {
+      return state.cart.reduce((total, p) => {
         return total + (p.price * p.quantity)
-      },0)
+      }, 0)
     },
 
     count(state) {
@@ -37,10 +38,10 @@ export default {
     },
 
     SET_CART(state, cart) {
-      state.cart=JSON.parse(cart);
+      state.cart = JSON.parse(cart);
     },
 
-    INCREMENT(state,id){
+    INCREMENT(state, id) {
       const item = state.cart.find(p => p.id == id);
       if (item) {
         item.quantity++
@@ -48,11 +49,20 @@ export default {
       updateLocalStorage(state.cart)
     },
 
-    DECREMENT(state,id){
+    DECREMENT(state, id) {
       const item = state.cart.find(p => p.id == id);
       if (item) {
-        item.quantity--
+        if (item.quantity > 1) {
+          item.quantity--
+        } else {
+          state.cart = state.cart.filter(p => p.id != item.id);
+        }
       }
+      updateLocalStorage(state.cart)
+    },
+
+    DELETE(state, id) {
+      state.cart = state.cart.filter(p => p.id != id);
       updateLocalStorage(state.cart)
     }
   },
@@ -66,12 +76,16 @@ export default {
       commit('SET_CART', cart)
     },
 
-    increment({commit}, productId) {
-      commit('INCREMENT', productId)
+    increment({commit}, id) {
+      commit('INCREMENT', id)
     },
 
-    decrement({commit}, productId) {
-      commit('DECREMENT', productId)
+    decrement({commit}, id) {
+      commit('DECREMENT', id)
+    },
+
+    delete({commit}, id) {
+      commit('DELETE', id)
     },
 
   }

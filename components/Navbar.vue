@@ -11,8 +11,8 @@
             <NuxtLink :to="{name:'auth-login'}" class="btn btn-primary">ورود</NuxtLink>
             <NuxtLink :to="{name:'auth-register'}" class="btn btn-secondary">عضویت</NuxtLink>
             <div class="relative">
-              <span class="rounded-full bg-red-200 font-xs bg-red-600 leading-0 absolute top-1 right-1  px-1 py-2">{{count}}</span>
-              <NuxtLink :to="{name:'cart'}" class=""><i class="fa fa-shopping-cart text-black text-2xl p-2"></i></NuxtLink>
+              <span class="rounded-full font-xs bg-red-600 leading-0 absolute top-1 right-1  px-1 py-2.5 text-white">{{count}}</span>
+              <NuxtLink :to="{name:'cart'}" class=""><i class="fa fa-shopping-cart text-black text-2xl p-2.5"></i></NuxtLink>
             </div>
 
           </div>
