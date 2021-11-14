@@ -1,11 +1,12 @@
 :root {
-  --color: #243746;
-  --color-primary: #158876;
+  --color: rgba(27, 27, 27, 0.98);
+  --color-primary: #faeef1;
   --color-secondary: #0e2233;
   --bg: #f3f5f4;
+  --bg-primary: #f5483c;
   --bg-secondary: #fff;
   --border-color: #5a5767;
-  --icon-color: #26dd56;
+  --icon-color: #00791f;
   --btn-primary: #ff3440
 }
 
@@ -14,6 +15,7 @@
   --color-primary: #41b38a;
   --color-secondary: #fdf9f3;
   --bg: #091a28;
+  --bg-primary: #091a28;
   --bg-secondary: #071521;
   --border-color: #0d2538;
   --boriconlor: #0d2538;
@@ -21,13 +23,14 @@
 }
 .sepia {
   --color: #433422;
-  --color-primary: #ea06a5;
+  --color-primary: #ea8623;
   --color-secondary: #504231;
   --bg: #f1e7d0;
+  --bg-primary: #f1e7d0;
   --bg-secondary: #eae0c9;
   --border-color: #ded0bf;
   --boriconlor: #ded0bf;
-  --btn-primary: #2536ff
+  --btn-primary: #5567ff
 }
 
 body {
@@ -37,18 +40,34 @@ body {
   color: var(--color);
   transition: background-color 0.5s;
 }
-a {
-  color: var(--color-primary);
-}
-p{
-  color: var(--color-primary);
-}
 *{
   border-color: var(--border-color);
 }
-i{
-  color: var(--icon-color);
+.btn-primary,.primary{
+  background: var(--bg-primary);
+  color: var(--color-primary);
+  transition: background-color 0.5s
 }
-.btn-primary{
-  background: var(--btn-primary);
+.btn-primary:hover{
+  background: var(--bg-secondary);
+  color: var(--color-secondary);
+  transition: background-color 0.5s
+}
+.btn-secondary{
+  background: var(--bg-secondary);
+  color: var(--color-secondary);
+  transition: background-color 0.5s
+}
+.btn-secondary:hover{
+  background: var(--bg-primary);
+  color: var(--color-primary);
+  transition: background-color 0.5s
+}
+.bg-color-primary{
+  background: var(--bg);
+  transition: background-color 0.5s
+}
+.bg-color-secondary{
+  background: var(--bg-secondary);
+  transition: background-color 0.5s
 }
