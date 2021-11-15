@@ -9,6 +9,11 @@ module.exports = {
       colors: {
         'color-primary': '#52f8cb',
         'color-secondary': '#f83a45',
+        'green':'#1db854',
+        'dark':'#121212',
+        'darkest':'#191414',
+        'light':'#282828',
+        'lightest':'#838383',
       },
     },
     fontFamily:{
